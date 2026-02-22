@@ -470,45 +470,64 @@ section {
 }
 
 /* ===== MUSIC ===== */
-.music-grid {
+.music-section {
+  max-width: 1000px;
+}
+
+.music-players {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: 1fr 280px;
+  gap: 3rem;
+  align-items: start;
   margin-top: 2rem;
 }
 
-.music-card {
-  background: var(--charcoal-light);
-  border: 1px solid rgba(201, 168, 76, 0.08);
-  border-radius: 8px;
-  padding: 2.5rem 2rem;
-  text-align: center;
-  transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+.spotify-embed {
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-.music-card:hover {
-  border-color: var(--gold-dim);
-  transform: translateY(-4px);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-}
-
-.music-card .icon {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+.albums-title {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
   color: var(--gold);
-  opacity: 0.5;
-}
-
-.music-card h4 {
+  margin-bottom: 1.5rem;
   font-weight: 400;
-  letter-spacing: 0.1em;
-  margin-bottom: 0.4rem;
 }
 
-.music-card p {
-  font-size: 0.8rem;
-  color: var(--cream-dim);
-  letter-spacing: 0.05em;
+.album-item {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba(240, 235, 227, 0.06);
+  color: var(--cream);
+  transition: color var(--transition);
+}
+
+.album-item:hover {
+  color: var(--gold);
+}
+
+.album-year {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  min-width: 40px;
+  font-weight: 500;
+}
+
+.album-name {
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+}
+
+.album-item--yt {
+  margin-top: 0.5rem;
+  border-bottom: none;
 }
 
 /* ===== LIVE ===== */
@@ -769,6 +788,11 @@ footer .copyright {
 
   .show-status {
     justify-self: start;
+  }
+
+  .music-players {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
   .contact-content {
